@@ -6,4 +6,32 @@ All app
 
 {% block content %}
 <h1>My App1 Folder</h1>
+<div class='grid grid-cols-3 gap-4 m-4'>
+    {% for app1 in apps   %}
+    <div class="bg-gray-700 p-5 rounded-2xl">
+        <img class='rounded-2xl' src="{{app1.image.url}}" alt="">
+
+        <h1 class='text-white-100'>{{app1.name}}</h1>
+        <div class="flex space-x-4">
+        <a href="#">
+        <button 
+        type='text-white' 
+        class = 'bg-green-500  text-white px-1 py-2 rounded'>
+       PRICE:- {{app1.pricing}}
+    </button>
+    </a>
+    <a href="{% url "app1_detail" app1.id %}">
+        <button 
+        type ='text-white'
+        class = 'bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded'>
+            {{app1.type}} - {{app1.id}}
+        </button>
+    </a>
+</div>
+
+</div>
+
+{% endfor %}
+</div>
 {% endblock %}
+

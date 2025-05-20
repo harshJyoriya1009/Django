@@ -7,9 +7,14 @@ class AppVarity(models.Model):
         ('ML', 'MASALA'),
         ('GI', 'GINJER'),
         ('KI', 'KIWI'),
+        ('EL', 'ELACHI'),
     ] 
     name = models.CharField(max_length=300)
     image = models.ImageField(upload_to='apps/')
     date_added = models.DateTimeField(default=timezone.now)
     type = models.CharField(max_length=2, choices=APP_TYPE_CHOICE)
+    description = models.TextField(default='')
+    pricing = models.CharField(max_length=45, default='0')
 
+    def __str__(self):
+        return self.name
