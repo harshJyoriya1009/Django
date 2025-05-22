@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import AppVarity, AppReview, AppVerification, Store
+from .models import AppVarity, AppReview, AppVerification, Store, AppBuying
 
 # Register your models here.
 
@@ -18,10 +18,10 @@ class StoreAdmin(admin.ModelAdmin):
 class AppVerificationAdmin(admin.ModelAdmin):
     list_display = ('app1', 'certificate_number')
 
-# class AppBuyingAdmin(admin.ModelAdmin):
-#     list_display = ('name', 'buying', 'issue_date')
+class AppBuyingAdmin(admin.ModelAdmin):
+    list_display = ('name', 'buying', 'issue_date')
 
 admin.site.register(AppVarity, AppVarityAdmin)
 admin.site.register(Store, StoreAdmin)
 admin.site.register(AppVerification, AppVerificationAdmin)
-# admin.site.register(AppBuying, AppBuyingAdmin)
+admin.site.register(AppBuying, AppBuyingAdmin)

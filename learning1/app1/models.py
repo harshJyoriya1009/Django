@@ -53,12 +53,12 @@ class AppVerification(models.Model):
         return f'Verification for {self.name.app1}'
     
 
-# class AppBuying(models.Model):
-#     name = models.CharField(max_length=40)
-#     app1 = models.OneToOneField(AppVarity, on_delete=models.CASCADE, related_name='verify')
-#     buying = models.CharField(max_length=45, default='0')
-#     issue_date = models.DateTimeField(default=timezone.now)
+class AppBuying(models.Model):
+    name = models.CharField(max_length=40)
+    app1 = models.OneToOneField(AppVarity, on_delete=models.CASCADE, related_name='buying')
+    buying = models.CharField(max_length=45, default='0')
+    issue_date = models.DateTimeField(default=timezone.now)
 
-#     def __str__(self):
-#         return f'You buy this app {self.name.app1}'
+    def __str__(self):
+        return f'You buy this app {self.name.app1}'
     

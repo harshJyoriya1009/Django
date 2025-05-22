@@ -20,4 +20,5 @@ from . import views
 urlpatterns = [
     path('', views.all_app1, name='all_app'),
     path('<int:app1_id>/', views.app1_detail, name='app1_detail'),
+    path('app_stores/', views.app_store_view, name='app1_stores'),
 ]
